@@ -1,0 +1,19 @@
+<!-- ваш_проект/templates/index.html -->
+
+<h1>Список Чатов</h1>
+
+<ul>
+    {% for chat in all_chats %}
+        <li>{{ chat.name }} <a href="{% url 'join_chat' chat.id %}">Войти</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Ваши Чаты</h2>
+
+<ul>
+    {% for chat in chats %}
+        <li><a href="{% url 'chat' chat.id %}">{{ chat.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'create_chat' %}">Создать новый чат</a>

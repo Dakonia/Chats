@@ -1,0 +1,10 @@
+<!-- ваш_проект/templates/create_chat.html -->
+
+<h2>Создать новый чат</h2>
+
+<form method="post" action="{% url 'create_chat' %}">
+    {% csrf_token %}
+    <label for="chat_name">Название чата:</label>
+    <input type="text" name="chat_name" required>
+    <button type="submit">Создать</button>
+</form>
