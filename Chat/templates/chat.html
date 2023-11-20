@@ -1,5 +1,5 @@
 <!-- ваш_проект/templates/chat.html -->
-
+{% load static %}
 <h1>{{ chat.name }}</h1>
 
 <h2>Участники чата:</h2>
@@ -16,12 +16,14 @@
     {% endfor %}
 </ul>
 
-<form method="post" action="{% url 'chat' chat.id %}">
-    {% csrf_token %}
-    <label for="content">Отправить сообщение:</label>
-    <input type="text" name="content" required>
-    <button type="submit">Отправить</button>
-</form>
+<body>
+    <input id="message-input" type="text" size="100"><br>
+    <input id="btn-submit" type="button" value="Send">
+    <div id="chat">
+
+    </div>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
 
 <!-- Добавляем кнопку выхода из чата -->
 <form method="post" action="{% url 'chat' chat.id %}">

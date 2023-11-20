@@ -1,0 +1,18 @@
+<!-- ваш_проект/templates/join_chat.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join Chat</title>
+</head>
+<body>
+    <h2>Join the Chat</h2>
+    <form method="post" action="{% url 'chat' room_name=room_name %}">
+        {% csrf_token %}
+        <!-- Добавьте поля формы, которые вам нужны -->
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <button type="submit">Join Chat</button>
+    </form>
+</body>
+</html>

@@ -70,4 +70,3 @@ def join_chat(request, chat_id):
         return redirect('chat', chat_id=chat.id)  # обновленный URL-путь
     return redirect('index')
 
-
